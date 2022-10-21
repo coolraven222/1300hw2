@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CULPA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    body,
+    html {
+      height: 100%;
+    }
+
+    .menu {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Links (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black ">
+      <div class="w3-col s4">
+        <a href="#" class="w3-button w3-block w3-black">Part 1</a>
+      </div>
+      <div class="w3-col s4">
+        <a href="#part2" class="w3-button w3-block w3-black">Part 2</a>
+      </div>
+      <div class="w3-col s4">
+        <a href="#part3" class="w3-button w3-block w3-black">Part 3</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add a background color and large text to the whole page -->
+  <div class="w3-sand w3-grayscale w3-large">
+    <!-- About Container -->
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Part 1: Identifying Usability Problems</span>
+        </h5>
+        <div class="w3-panel w3-leftbar w3-light-grey">
+          <p>Picking a Web page</p>
+        </div>
+        <p><a href="https://www.culpa.info/prof/3628" title="CULPA">CULPA</a>, a website for Columbia students to rate
+          their professors, displays information in an unintuitive way
+          that lacks usability and accessibility.</p>
+        <img src="./images/original.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+        <div class="w3-panel w3-leftbar w3-light-grey">
+          <p>Finding Problems</p>
+        </div>
+        <ul>
+          <li>
+            <strong>Low Usability:</strong> Students are the primary users. They visit the website to gain insights into
+            the professor's teaching style and class workload. However, the design makes students hard to get insights
+            effectively. Reviews are ranked in chronological order without regard to the length of reviews or the class
+            they are coming from.
+          </li>
+          <li><strong>Low Learnability:</strong> It is difficult for users to write or understand the implication the
+            first time they encounter this interface. To write a review, you need to click either of the two dropdown
+            buttons. Moreover, under the professor's name, sometimes there is a line, "This professor has earned a CULPA
+            gold nugget." However, you must go to the dropdown on the top right, click FAQ, and then know what "gold
+            nugget" means.
+          </li>
+          <li><strong>Low Memorability:</strong> Even if a user has tried multiple times, it is still hard for them to
+            remember how to
+            use it. Through interviews with Columbia students, I found little people could tell me the difference
+            between the two dropdown button on the top right.
+          </li>
+        </ul>
+        <div class="w3-panel w3-leftbar w3-light-grey">
+          <p>Accessibility</p>
+        </div>
+        <p>I found the result useful and insightful. It reveals much information that is indiscernible for regular users
+          but troublesome for people using screen readers. For example, the two dropdown buttons on the top right have
+          the same ARIA label, “dropdown menu button,” so people with screen readers can only distinguish one from the
+          other by reading what's included in the list, which is time-consuming. However, some other alerts seem to be
+          false positives. One common alert on the page is “redundant link.” But that is necessary because each review
+          needs to indicate what class it is referring to, which helps students navigate between classes.</p>
+      </div>
+    </div>
+
+    <!-- Add a background color and large text to the whole page -->
+    <div class="w3-sand w3-grayscale w3-large">
+      <!-- About Container -->
+      <div class="w3-container" id="part2">
+        <div class="w3-content" style="max-width:700px">
+          <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Part 2: Visual Redesign</span>
+          </h5>
+          <div class="w3-panel w3-leftbar w3-light-grey">
+            <p>Low-fidelity Wireframing</p>
+          </div>
+          <figure>
+            <img src="./images/low-desktop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>Low-fidelity Desktop</figcaption>
+          </figure>
+          <figure>
+            <img src="./images/low-tablet.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>Low-fidelity Tablet</figcaption>
+          </figure>
+          <figure>
+            <img src="./images/low-mobile.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>Low-fidelity Mobile</figcaption>
+          </figure>
+          <p> I made a few changes to the original website:</p>
+          <figure>
+            <img src="./images/low-desktop-annotated.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>Low-fidelity Desktop - Annotated</figcaption>
+          </figure>
+          <ol>
+            <li>I enable users to filter and sort reviews. Students could either filter by class name or time range.
+              They could also sort by time or review length. This feature enables users to find the most useful review
+              for them more effectively, thus increasing usability.</li>
+            <li>Without going to FAQ to find the meaning of the golden badge, users could click the information icon on
+              the top right. It reduces the things to learn and remember for users, thus improving learnability and
+              memorability.</li>
+            <li>I break down the two drop-down menus into three core functions: FAQ, Contact, and Write A Review. So
+              people no longer need to memorize what's included in each dropdown menu, thus improving memorability.
+            </li>
+            <li>We summarize and list common phrases that appear in reviews, so students can quickly click the tag and
+              get all reviews that contain the term, such as "Midterm." This feature boosts usability by improving
+              users' task success effectiveness.</li>
+          </ol>
+          <div class="w3-panel w3-leftbar w3-light-grey">
+            <p>Visual Design Style Guide</p>
+          </div>
+          <figure>
+            <img src="./images/style-guide.jpg" style="width:100%" class="w3-margin-top">
+            <figcaption>Visual Design Style Guide</figcaption>
+          </figure>
+          <div class="w3-panel w3-leftbar w3-light-grey">
+            <p>High-Fidelity Prototyping</p>
+          </div>
+
+          <p>Design Notes:</p>
+          <ul>
+            <li>To make it responsive for laptop, tablet, and phone screens, I use "flex" as display and "column" as
+              flex-direction. Thus, as the width decreases from the laptop screen, the component "Read reviews that
+              mention" would automatically be arranged between the professor's name and the following reviews.</li>
+            <li> Many parts of the page would change due to user actions.
+              <ul>
+                <li>
+                  The color of tags in "Read reviews that mention" will turn darker as the user hovers over them. This
+                  is made possible by "ul li:hover" block in CSS, where I specify a different background color from the
+                  standard "ul li."
+                </li>
+                <li>When a user clicks the blue information icon on the top right of the yellow badge, a pop-up will
+                  appear describing the meaning of the badge. This is made possible by a JS function "handleMessage" in
+                  HTML. The message will automatically disappear after a while because I set a timeout of 3000.
+                </li>
+                <li>When a user clicks the "filter" or "sort" button on the page, they can expand to see the filtering
+                  and sorting options. This is made possible by a JS script that creates a block of options to appear on
+                  click.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <figure>
+            <img src="./images/hi-desktop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>High-fidelity Desktop</figcaption>
+          </figure>
+          <figure>
+            <img src="./images/hi-tablet.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>High-fidelity Tablet</figcaption>
+          </figure>
+          <figure>
+            <img src="./images/hi-mobile.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <figcaption>High-fidelity Mobile</figcaption>
+          </figure>
+
+
+        </div>
+      </div>
+
+      <!-- Add a background color and large text to the whole page -->
+      <div class="w3-sand w3-grayscale w3-large">
+        <!-- About Container -->
+        <div class="w3-container" id="part3">
+          <div class="w3-content" style="max-width:700px">
+            <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Part 3: Responsive Redesign</span>
+            </h5>
+            <div class="w3-panel w3-leftbar w3-light-grey">
+              <p>My New CULPA </p>
+            </div>
+            <p>
+              Feel free to try it yourself!
+              <a href="https://coolraven222.github.io/new-culpa/" title="New Page">My New CULPA</a>.
+            </p>
+            <figure>
+              <img src="./images/tryit.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+              <figcaption>Responsive Redesign</figcaption>
+            </figure>
+          </div>
+          <!-- End page content -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+          <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+              class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+</body>
+
+</html>
